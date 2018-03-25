@@ -1,0 +1,141 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+h1 {
+  letter-spacing: .2em;
+  margin: 3em auto;
+  text-align: center;
+}
+
+.modal-container {
+  /* display: none; */
+}
+
+/* ------------user display rows--------------- */
+.user {
+  border: 1px solid rgba(167, 160, 166, 0.41);
+  border-radius: 10px;
+  margin: 2em auto;
+  padding: 2em 1em;
+  width:90%;
+  background: rgba(215, 204, 219, 0.30);
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.user-photo,
+.modal-user-photo {
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.user-location {
+  text-transform: capitalize;
+}
+
+/* -----------overlay------------- */
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  transition: all .3s;
+}
+
+.overlay.open{
+  visibility: visible;
+  z-index: 2;
+  opacity: 1;
+  background:rgba(79, 76, 79, 0.54);
+
+}
+.blur-it {
+  filter: blur(4px);
+}
+
+/* -----------modal window------------- */
+.modal-user {
+  visibility: hidden;
+  background:rgba(111, 111, 111, 0.25);
+  text-align: center;
+  display: block;
+  margin: 10% auto;
+  background: white;
+  border: 1px solid rgba(200, 213, 196, 0.48);
+  border-radius: 20px;
+  padding: 3em 1em;
+  font-size: 1em;
+  position :absolute;
+  top:10%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+}
+
+.modal-user.modal-open{
+  visibility: visible;
+}
+
+.modal-user-location{
+  padding-bottom: 2em;
+}
+
+.modal-user-cell {
+  padding-top:2em;
+  border-top: 1px solid rgba(212, 214, 209, 0.56);
+}
+
+.modal-user-name {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.modal-user-location,
+.modal-user-adress {
+  text-transform: capitalize;
+}
+
+/* -----------media query ------------- */
+
+@media (min-width:769px){
+  .user-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .user {
+    width:40%;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (min-width:992px){
+  .user {
+    flex-direction: row;
+    width: 45%;
+  }
+}
+@media (min-width:1200px){
+  .user {
+    flex-direction: column;
+    width: 320px;
+  }
+
+}
